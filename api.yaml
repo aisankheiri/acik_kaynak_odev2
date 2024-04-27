@@ -1,0 +1,39 @@
+openapi: 3.0.0
+info:
+  title: Örnek REST API
+  description: örnek REST API.
+  version: 1.0.0
+paths:
+  /books:
+    get:
+      summary: Tüm kitapları listeler.
+      responses:
+        '200':
+          description: Başarılı yanıt.
+  /books/{id}:
+    get:
+      summary: Belirli bir kitabın detaylarını getirir.
+      parameters:
+        - name: id
+          in: path
+          description: Kitap ID'si.
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Başarılı yanıt.
+    delete:
+      summary: Belirli bir kitabı siler.
+      parameters:
+        - name: id
+          in: path
+          description: Kitap ID'si.
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Başarılı yanıt.
+          
+
